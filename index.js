@@ -1,15 +1,3 @@
-function test() {
-	console.log("Привет!");
-}
+var counter = require("./array");
 
-test();
-
-function call(func) {
-	func();
-}
-
-var printSomething = function() {
-	console.log("Просто текст");
-};
-
-call(printSomething);
+console.log(counter([1, 2, 3, 25, 64, 158]));

@@ -1,14 +1,10 @@
-var fs = require('fs'); //модуль для работы с файлами
+var http = require('http'); //модуль для создания сервера
 
-//fs.unlink('text.txt', function () {}); //метод для удаления файлов
-fs.unlink('./new-one/some_new.txt', function () {
-	fs.rmdir('new-one', function() {});
-}); //чтобы удалить папку с файлами нужно сначала удалить файлы в ней
+var server = http.createServer(function (req, res) {
+	console.log("URL страницы: " + req.url);
+	res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'}); //заголовок если страница найдена (его код и тип полученных данных)
+	res.end('Привет, мир!'); //содержание ответа
+}); //создание сервера (аргументы ф-ии: запрос к серверу и ответ с него)
 
-// fs.mkdir('new-one', function() {
-// 	fs.writeFile('./new-one/some_new.txt', "Привет мир!", function() {
-// 		console.log("Все сработало!");
-// 	});
-// }); //метод для создания папки
-
-//fs.rmdirSync('new-one'); //метод для удаления папки
+server.listen(3000, '127.0.0.1'); //указываем по какому порту будет отслеживаться подключение к серверу и ip сервера
+console.log("Мы отслеживаем порт 3000");

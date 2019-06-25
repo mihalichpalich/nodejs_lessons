@@ -1,10 +1,9 @@
-var http = require('http'); //модуль для создания сервера
+var fs = require('fs');
 
-var server = http.createServer(function (req, res) {
-	console.log("URL страницы: " + req.url);
-	res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'}); //заголовок если страница найдена (его код и тип полученных данных)
-	res.end('Привет, мир!'); //содержание ответа
-}); //создание сервера (аргументы ф-ии: запрос к серверу и ответ с него)
+var myReadShort = fs.createReadStream(__dirname + '/article.txt'); //метод для чтения потока, __dirname - константа для пути к папке
+var myWriteShort = fs.createWriteStream(__dirname + '/news.txt');
 
-server.listen(3000, '127.0.0.1'); //указываем по какому порту будет отслеживаться подключение к серверу и ip сервера
-console.log("Мы отслеживаем порт 3000");
+myReadShort.on('data', function(chunk) {
+	console.log("Новые данные получены:\n");
+	myWriteShort.write(chunk);
+}); //обработчик для получения "кусочков" данных

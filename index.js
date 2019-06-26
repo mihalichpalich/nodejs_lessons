@@ -26,6 +26,7 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/news/:id', function(req, res) {
+	console.log(req.query); //вывод данных из url
 	res.render('news', {newsID: req.params.id, obj: obj});  
 });
 

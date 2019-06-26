@@ -1,0 +1,27 @@
+{
+  "name": "nodejs_lessons",
+  "version": "1.0.0",
+  "description": "example app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihalichpalich/nodejs_lessons.git"
+  },
+  "keywords": [
+    "example",
+    "app"
+  ],
+  "author": "Mikhail Pavlov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mihalichpalich/nodejs_lessons/issues"
+  },
+  "homepage": "https://github.com/mihalichpalich/nodejs_lessons#readme"
+}

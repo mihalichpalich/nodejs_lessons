@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Заголовок страницы</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
@@ -10,6 +11,23 @@
   <div class="block">
 	<h1>Привет,мир</h1>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, eum saepe sapiente recusandae corporis sed obcaecati, ipsum ipsam animi, perspiciatis molestiae consequatur error deserunt. Quam labore dignissimos dolore, dicta esse voluptate tenetur aliquid voluptatum, facilis quia unde neque recusandae impedit quibusdam sint, officiis explicabo eum repellat molestiae earum praesentium ipsum! Fugit incidunt aperiam totam veritatis aut, velit nam consequatur nesciunt necessitatibus pariatur. Quaerat, fugiat aut iure consequatur delectus placeat quasi ipsum accusamus explicabo officiis alias, labore unde laborum amet ex laudantium, optio quas corporis qui. Quia temporibus, deleniti corporis magni quasi aliquid autem libero officia officiis atque, fugiat fugit, quas possimus! Ad debitis nostrum earum soluta laborum vero, laboriosam, possimus, minima, quibusdam quae provident reiciendis. Cum explicabo veritatis, dolorum fugiat culpa expedita voluptas tenetur ab voluptatibus mollitia rem officiis quos non similique, quo odio exercitationem tempora adipisci! Accusamus doloribus quia labore aliquid aspernatur molestiae incidunt, culpa id esse dolore accusantium.</p>
+
+	<form method="post" action="/"> <!-- post-запрос и перенаправление на страницу about после отправки -->
+	  <div class="form-group">
+	    <label for="exampleInputEmail1">Email address</label>
+	    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+	    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Password</label>
+	    <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	  </div>
+	  <div class="form-group form-check">
+	    <input type="checkbox" name="check" class="form-check-input" id="exampleCheck1">
+	    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+	  </div>
+	  <button type="submit" class="btn btn-primary">Отправить</button>
+	</form>
   </div>
 </body>
 </html>

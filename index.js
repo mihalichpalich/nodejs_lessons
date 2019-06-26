@@ -2,16 +2,18 @@ var express = require('express');
 
 var app = express(); //доступ к ф-ям библиотеки express через переменную
 
-app.get('/', function(req, res) {
-	res.send('This is home');
-}); //при загрузке главной страницы срабатывает ф-я
+app.set('view engine', 'ejs'); //добавление шаблонизатора
 
-app.get('/news', function(req, res) {
-	res.send('This is news');
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/news/:id', function(req, res) { //'/news/:id/:name'
-	res.send('ID is - ' + req.params.id /*+ req.params.name*/);
-}); //загрузка страницы по id (и name)
+app.get('/about', function(req, res) {
+	res.sendFile(__dirname + '/about.html');
+});
+
+app.get('/news/:id', function(req, res) {
+	res.render();  //отображение шаблона в браузере и передача параметров
+});
 
 app.listen(3000);

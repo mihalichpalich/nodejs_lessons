@@ -1,21 +1,17 @@
-var fs = require('fs');
+var express = require('express');
 
-//подключение к локальному серверу
-var http = require('http');
+var app = express(); //доступ к ф-ям библиотеки express через переменную
 
-var server = http.createServer(function (req, res) {
-	console.log("URL страницы: " + req.url);
-    if (req.url === '/index' | req.url === '/') {
-		res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-		fs.createReadStream(__dirname + '/index.html').pipe(res);
-	} else if (req.url === '/about') {
-		res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-		fs.createReadStream(__dirname + '/about.html').pipe(res);
-	} else {
-		res.writeHead(404, {'Content-Type': 'text/html; charset=utf-8'});
-		fs.createReadStream(__dirname + '/404.html').pipe(res);
-	}
+app.get('/', function(req, res) {
+	res.send('This is home');
+}); //при загрузке главной страницы срабатывает ф-я
+
+app.get('/news', function(req, res) {
+	res.send('This is news');
 });
 
-server.listen(3000, '127.0.0.1');
-console.log("Мы отслеживаем порт 3000"); 
+app.get('/news/:id', function(req, res) { //'/news/:id/:name'
+	res.send('ID is - ' + req.params.id /*+ req.params.name*/);
+}); //загрузка страницы по id (и name)
+
+app.listen(3000);

@@ -3,15 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Новости</title>
-	<style>
-		body {background-color: #98bfd5;}
-		.block {text-align: center; width: 70%; margin-left: 15%}
-		ul {text-align: left;}
-		h1 {color: #494949; font-size: 3.5em}
-		p {color: #494949; font-size: 1.2em}
-	</style>
+	<link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
+	<% include blocks/header.ejs %>
 	<div class="block">
 		<h1>Новостная страница с ID - <%= newsID %></h1>
 		<p><b>Title: </b> <%= obj.title %></p>

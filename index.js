@@ -13,7 +13,9 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/news/:id', function(req, res) {
-	res.render();  //отображение шаблона в браузере и передача параметров
+	var obj = {title: "Новость", id: 4, paragraphs: ['Параграф', 'Обычный текст', 'Числа: 2, 4, 6', 99]};
+	res.render('news', {newsID: req.params.id, obj: obj});  //отображение шаблона из папки views (обязательно!) 
+															//в браузере и передача параметров
 });
 
 app.listen(3000);
